@@ -39,8 +39,10 @@ public class ShortUrl {
     private LocalDateTime createdAt;
 
     @Column(nullable = false)
+    @com.fasterxml.jackson.annotation.JsonProperty("click_count")
     private Long accessCount;
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;

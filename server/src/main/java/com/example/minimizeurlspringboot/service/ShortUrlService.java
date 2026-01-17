@@ -1,6 +1,7 @@
 package com.example.minimizeurlspringboot.service;
 
 
+import java.util.List;
 import java.util.UUID;
 
 // used with the mimicked user
@@ -60,6 +61,11 @@ public class ShortUrlService {
         return shortUrlRepository.findByShortCode(shortCode)
                 .orElseThrow(() -> new RuntimeException("Short URL not found"));
     }
+    
+    public List<ShortUrl> getUrlsByUser(Long userId) {
+    return shortUrlRepository.findByUserId(userId);
+}
+
 
     public void incrementAccessCount(ShortUrl shortUrl) {
         shortUrl.setAccessCount(shortUrl.getAccessCount() + 1);

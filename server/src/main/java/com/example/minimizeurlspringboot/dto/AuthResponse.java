@@ -7,6 +7,9 @@ import lombok.Data;
 @AllArgsConstructor
 public class AuthResponse {
     private String message;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("access_token")
     private String token;
+
     private String tokenType;
 }
