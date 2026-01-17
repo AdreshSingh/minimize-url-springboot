@@ -39,11 +39,14 @@ public class ShortUrl {
     private LocalDateTime createdAt;
 
     @Column(nullable = false)
-    private Long accessCount = 0L;
+    private Long accessCount;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+
+    @Builder.Default
+    private Long defaultAccessCount = 0L;
 
     @PrePersist
     protected void onCreate() {
