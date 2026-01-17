@@ -10,6 +10,14 @@ A Spring Boot application that provides URL shortening functionality with JWT-ba
 - **User Management**: Register new users and manage user accounts
 - **H2 Database**: Embedded database for development and testing
 
+## Screenshots
+
+### Home Page
+![Home Page](.doc/images/home-main.png)
+
+### URL Management
+![URL Management](.doc/images/home-urls.png)
+
 ## Project Structure
 
 ```
